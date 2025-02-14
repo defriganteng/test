@@ -55,7 +55,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .content-container {
@@ -101,7 +101,7 @@ html, body {
     width: 100%;
     height: 100%;
     /* Pilih salah satu dari opsi di bawah */
-    background: rgba(0, 0, 0, 0.2); /* Overlay gelap solid */
+    background: rgba(0, 0, 0, 0.4); /* Overlay gelap solid */
     /* background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3)); */ /* Gradient overlay */
     /* background: radial-gradient(circle, rgba(0,0,0,0.3), rgba(0,0,0,0.7)); */ /* Radial gradient overlay */
     z-index: 1;
