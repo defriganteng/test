@@ -31,9 +31,54 @@ html, body {
     justify-content: center;
     align-items: center;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
     text-align: center;
     padding: 20px;
+}
+
+.wedding-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.couple-names {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.to-text {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.guest-name {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.open-invitation {
+    padding: 15px 60px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.open-invitation:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #content1 {
@@ -48,34 +93,25 @@ html, body {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.scroll-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.scroll-button:hover {
-    background-color: #45a049;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
 @media (max-width: 768px) {
-    h1 {
-        font-size: 1.8rem;
+    .title {
+        font-size: 2rem;
     }
 
-    .scroll-button {
-        padding: 12px 24px;
-        font-size: 16px;
+    .couple-names {
+        font-size: 2.5rem;
+    }
+
+    .to-text {
+        font-size: 1.2rem;
+    }
+
+    .guest-name {
+        font-size: 1.5rem;
+    }
+
+    .open-invitation {
+        padding: 12px 40px;
+        font-size: 1rem;
     }
 }
