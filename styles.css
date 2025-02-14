@@ -2,62 +2,62 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
-/* Background tetap */
+/* Background tetap di tempat */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover;
+    background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center;
+    background-size: cover;
     z-index: -1;
 }
 
-/* Wrapper untuk mengontrol scrolling */
-.wrapper {
+/* Kontainer utama */
+.container {
+    position: relative;
     width: 100%;
-    height: 300vh; /* 3 konten bertumpuk */
-    overflow: hidden; /* Cegah scroll manual sebelum tombol ditekan */
+    height: 300vh; /* 3 konten masing-masing setinggi 100vh */
 }
 
-/* Section */
-.section {
+/* Setiap konten */
+.content {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
-    transition: transform 0.8s ease-in-out;
+    color: white;
+    font-size: 2rem;
 }
 
-#content1 {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-#content2 {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-#content3 {
-    background: rgba(0, 0, 0, 0.9);
-}
+/* Warna latar belakang semi transparan */
+.content-1 { background: rgba(0, 0, 0, 0.6); }
+.content-2 { background: rgba(255, 165, 0, 0.6); }
+.content-3 { background: rgba(0, 128, 255, 0.6); }
 
 /* Tombol */
 .btn {
     padding: 15px 30px;
-    font-size: 18px;
-    background: gold;
-    color: black;
+    background-color: #ff4500;
+    color: white;
     border: none;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 .btn:hover {
-    background: darkorange;
+    background-color: #d13b00;
 }
