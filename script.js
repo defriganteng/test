@@ -1,11 +1,11 @@
 document.body.style.overflow = "hidden"; // Mencegah scroll sebelum tombol ditekan
 
 document.getElementById("unlockScroll").addEventListener("click", function () {
-    // Aktifkan scroll
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "auto"; // Aktifkan scroll
 
-    // Pastikan browser memperbarui DOM sebelum scroll terjadi
-    requestAnimationFrame(() => {
-        document.getElementById("content2").scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    // Gunakan delay untuk memastikan overflow berubah sebelum scroll terjadi
+    setTimeout(() => {
+        const target = document.getElementById("content2");
+        window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+    }, 100); // Delay 100ms untuk memastikan efek bekerja
 });
