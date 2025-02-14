@@ -37,7 +37,7 @@ html, body {
 }
 
 #content1 {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: url('sampul.jpg') no-repeat center center/cover;
 }
 
 #content2 {
