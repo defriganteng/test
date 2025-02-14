@@ -4,89 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Responsive Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('background1.jpg') no-repeat center center/cover;
-            z-index: -1;
-        }
-
-        .content-container {
-            height: 100vh;
-            overflow-y: hidden;
-            scroll-behavior: smooth;
-        }
-
-        .content {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #content1 {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        #content2 {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        #content3 {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .scroll-button {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .scroll-button:hover {
-            background-color: #45a049;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .scroll-button {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background"></div>
@@ -112,24 +30,6 @@
         </section>
     </div>
 
-    <script>
-        function enableScroll() {
-            const container = document.querySelector('.content-container');
-            container.style.overflowY = 'auto';
-            document.getElementById('content2').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Mencegah bounce effect pada iOS Safari
-        document.addEventListener('touchmove', function(e) {
-            if (document.querySelector('.content-container').style.overflowY !== 'auto') {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        // Reset scroll position saat refresh
-        window.onbeforeunload = function() {
-            window.scrollTo(0, 0);
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
