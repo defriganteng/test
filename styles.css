@@ -37,7 +37,7 @@ html, body {
 }
 
 #content1 {
-    background-color: url('sampul.jpg') no-repeat center center/cover;
+    background: url('sampul.jpg') no-repeat center center/cover;
 }
 
 #content2 {
