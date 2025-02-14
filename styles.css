@@ -76,6 +76,10 @@ html, body {
     position: relative;
 }
 
+#content1 {
+    background: url('sampul.jpg') no-repeat center center/cover;
+}
+
 .wedding-content {
     display: flex;
     flex-direction: column;
