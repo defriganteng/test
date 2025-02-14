@@ -3,9 +3,16 @@ document.body.style.overflow = "hidden"; // Mencegah scroll sebelum tombol ditek
 document.getElementById("unlockScroll").addEventListener("click", function () {
     document.body.style.overflow = "auto"; // Aktifkan scroll
 
-    // Gunakan delay untuk memastikan overflow berubah sebelum scroll terjadi
+    // Pastikan browser telah mengupdate tampilan sebelum scroll
     setTimeout(() => {
         const target = document.getElementById("content2");
-        window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
-    }, 100); // Delay 100ms untuk memastikan efek bekerja
+
+        // Coba scrollIntoView (metode yang lebih umum)
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Jika scrollIntoView gagal, gunakan scrollTo sebagai cadangan
+        setTimeout(() => {
+            window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+        }, 200); // Delay kecil untuk memastikan perpindahan terjadi
+    }, 50); // Delay agar overflow berubah sebelum scroll
 });
