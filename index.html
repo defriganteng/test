@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="background"></div> <!-- Background tetap -->
+    <div class="background"></div>
 
     <div class="container">
-        <section class="content content-1">
-            <div>
-                <h1>Konten 1 (Sampul)</h1>
-                <button class="btn" id="unlockScroll">Lanjut ke Konten 2</button>
-            </div>
+        <!-- Konten 1 (Sampul) -->
+        <section id="konten1" class="section">
+            <h1>Selamat Datang</h1>
+            <button id="unlockButton">Buka Konten</button>
         </section>
-        <section class="content content-2">
-            <h1>Konten 2</h1>
+
+        <!-- Konten 2 (Terkunci) -->
+        <section id="konten2" class="section locked">
+            <h2>Konten 2</h2>
+            <p>Ini adalah konten kedua yang baru terbuka setelah tombol ditekan.</p>
         </section>
-        <section class="content content-3">
-            <h1>Konten 3</h1>
+
+        <!-- Konten 3 (Terkunci) -->
+        <section id="konten3" class="section locked">
+            <h2>Konten 3</h2>
+            <p>Ini adalah konten ketiga yang baru terbuka setelah tombol ditekan.</p>
         </section>
     </div>
 
