@@ -1,18 +1,19 @@
-let isScrollUnlocked = false;
+let isScrollEnabled = false;
+
+// Mencegah scroll sebelum tombol ditekan
+document.addEventListener('wheel', function(event) {
+    if (!isScrollEnabled) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+document.addEventListener('touchmove', function(event) {
+    if (!isScrollEnabled) {
+        event.preventDefault();
+    }
+}, { passive: false });
 
 document.getElementById('unlockScroll').addEventListener('click', function() {
-    isScrollUnlocked = true;
+    isScrollEnabled = true;
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
 });
-
-window.addEventListener('wheel', function(e) {
-    if (!isScrollUnlocked) {
-        e.preventDefault();
-    }
-}, { passive: false });
-
-window.addEventListener('touchmove', function(e) {
-    if (!isScrollUnlocked) {
-        e.preventDefault();
-    }
-}, { passive: false });
