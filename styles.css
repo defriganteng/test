@@ -76,10 +76,44 @@ html, body {
     position: relative;
 }
 
+/* ... kode CSS sebelumnya tetap sama sampai .content ... */
+
 #content1 {
-    background: url('sampul.jpg') no-repeat center center/cover;
-    opacity: 0.2;
+    position: relative;
+    /* Metode 1: Menggunakan gambar background */
+    background-image: url('sampul.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Metode 2: Menggunakan gradient */
+    /* Uncomment salah satu di bawah ini untuk menggunakan gradient */
+    /* background: linear-gradient(45deg, #000428, #004e92); */
+    /* background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)); */
 }
+
+/* Overlay untuk content1 */
+#content1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Pilih salah satu dari opsi di bawah */
+    background: rgba(0, 0, 0, 0.2); /* Overlay gelap solid */
+    /* background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3)); */ /* Gradient overlay */
+    /* background: radial-gradient(circle, rgba(0,0,0,0.3), rgba(0,0,0,0.7)); */ /* Radial gradient overlay */
+    z-index: 1;
+}
+
+/* Pastikan konten tetap di atas overlay */
+#content1 .wedding-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ... kode CSS lainnya tetap sama ... */
 
 .wedding-content {
     display: flex;
