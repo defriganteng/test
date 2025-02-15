@@ -212,4 +212,32 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+//animasi waktu scroll
+// Tambahkan di file script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Tambahkan kelas animate-on-scroll ke konten utama di section 2-9
+    for (let i = 2; i <= 9; i++) {
+        const contentSection = document.querySelector(`#content${i} > div`);
+        if (contentSection) {
+            contentSection.classList.add('animate-on-scroll');
+        }
+    }
 
+    // Fungsi untuk mengecek apakah elemen visible saat di-scroll
+    function checkVisible() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        const windowHeight = window.innerHeight;
+        
+        elements.forEach(function(element) {
+            const positionFromTop = element.getBoundingClientRect().top;
+            
+            if (positionFromTop - windowHeight <= 0) {
+                element.classList.add('appear');
+            }
+        });
+    }
+
+    // Jalankan pengecekan saat load dan scroll
+    checkVisible();
+    window.addEventListener('scroll', checkVisible);
+});
