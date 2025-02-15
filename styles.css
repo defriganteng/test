@@ -1256,3 +1256,42 @@ html, body {
 .animate-button.appear {
     animation: fadeInScale 0.8s ease forwards;
 }
+
+
+
+/* Animasi scale up dengan anchor tengah-bawah */
+@keyframes scaleUpFromBottom {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: center bottom;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: center bottom;
+    }
+}
+
+/* Selector untuk section 2-9 dan semua elemen dalamnya (kecuali background) */
+#content2 .wedding-content,
+#content3 .prayer-content,
+#content4 .couple-info,
+#content5 .invitation-content,
+#content6 .gallery-content,
+#content7 .story-content,
+#content8 .rsvp-wishes-container,
+#content9 .closing-content {
+    opacity: 0;
+}
+
+#content2 .wedding-content.appear,
+#content3 .prayer-content.appear,
+#content4 .couple-info.appear,
+#content5 .invitation-content.appear,
+#content6 .gallery-content.appear,
+#content7 .story-content.appear,
+#content8 .rsvp-wishes-container.appear,
+#content9 .closing-content.appear {
+    animation: scaleUpFromBottom 0.8s ease-out forwards;
+}
