@@ -868,6 +868,7 @@ html, body {
 
 
 /* Styles for Content 7 - RSVP and Wishes */
+/* Styles for Content 7 - RSVP and Wishes */
 #content7 {
     position: relative;
     background-color: #f9f9f9;
@@ -912,7 +913,6 @@ html, body {
 }
 
 .form-group input,
-.form-group select,
 .form-group textarea {
     width: 100%;
     padding: 10px;
@@ -923,7 +923,6 @@ html, body {
 }
 
 .form-group input:focus,
-.form-group select:focus,
 .form-group textarea:focus {
     border-color: #666;
     outline: none;
