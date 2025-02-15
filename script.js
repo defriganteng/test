@@ -212,4 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+//untuk koneksi buruk
+window.addEventListener("load", function () {
+    document.body.style.display = "block"; // Menampilkan halaman setelah selesai loading
+});
