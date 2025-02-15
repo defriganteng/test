@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 0.7
     });
 
     // Observe all story events
