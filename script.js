@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.2 // Menentukan seberapa banyak elemen harus terlihat sebelum animasi dimulai
+        threshold: 0.9 // Menentukan seberapa banyak elemen harus terlihat sebelum animasi dimulai
     });
 
     // Observasi section content2
