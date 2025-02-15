@@ -39,3 +39,27 @@ window.onbeforeunload = function() {
 
 // Initialize background slider when page loads
 window.addEventListener('load', initBackgroundSlider);
+
+
+// ... JavaScript sebelumnya tetap sama ...
+
+// Tambahkan fungsi untuk animasi scroll
+function handleScrollAnimation() {
+    const elements = document.querySelectorAll('#content3 .prayer-content > *');
+    
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight * 0.8 && elementBottom > 0) {
+            element.classList.add('visible');
+        }
+    });
+}
+
+// Event listener untuk scroll
+window.addEventListener('scroll', handleScrollAnimation);
+
+// Initial check untuk elemen yang sudah visible
+handleScrollAnimation();
