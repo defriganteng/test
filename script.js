@@ -212,7 +212,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//untuk koneksi buruk
-window.addEventListener("load", function () {
-    document.querySelector(".content-container").style.display = "block";
-});
+
