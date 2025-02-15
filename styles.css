@@ -691,7 +691,7 @@ html, body {
 /* Styling Section 8 - RSVP & Wishes */
 #content8 {
     position: relative;
-    background: #FBF5DD; /* Warna krem dari palet */
+    background: #767c81; /* Warna krem dari palet */
     padding: 50px 20px;
 }
 
@@ -857,7 +857,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.0);
 }
 
 .closing-content {
