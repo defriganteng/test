@@ -292,6 +292,32 @@ html, body {
     font-style: italic;
 }
 
+/*animasi saat scroll konten 3*/
+/* Tambahkan keyframes untuk animasi scale-up dari bawah tengah */
+@keyframes scaleUpFromBottom {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: bottom center;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: bottom center;
+    }
+}
+
+/* Tambahkan class untuk elemen di content3 yang akan dianimasikan */
+#content2 .prayer-content {
+    opacity: 0;
+}
+
+#content2 .prayer-content.appear {
+    animation: scaleUpFromBottom 1s ease forwards;
+}
+
+
+
 /* Section 4 - Couple Info */
 #content4 {
     position: relative;
