@@ -293,7 +293,18 @@ html, body {
 }
 
 /*animasi saat scroll konten 3*/
-
+@keyframes scaleUpFromBottom {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: bottom center;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: bottom center;
+    }
+}
 
 /* Tambahkan class untuk elemen di content3 yang akan dianimasikan */
 #content3 .prayer-content {
