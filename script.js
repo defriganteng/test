@@ -114,58 +114,127 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add this to your script.js file
 
-// Add this to your script.js file
+// Fungsi untuk form RSVP
 document.addEventListener('DOMContentLoaded', function() {
-    // RSVP Form Handling
     const rsvpForm = document.getElementById('rsvpForm');
+    
     if (rsvpForm) {
         rsvpForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(rsvpForm);
-            const data = Object.fromEntries(formData);
+            // Ambil data dari form
+            const name = document.getElementById('name').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
             
-            // Here you would typically send the data to your server
-            console.log('RSVP Data:', data);
+            // Simpan data (dalam contoh ini hanya di localStorage)
+            const rsvpData = {
+                name: name,
+                attendance: attendance,
+                timestamp: new Date()
+            };
             
-            // Show success message
-            alert('Terima kasih telah mengkonfirmasi kehadiran Anda!');
+            // Simpan di localStorage
+            let savedRSVPs = JSON.parse(localStorage.getItem('weddingRSVPs') || '[]');
+            savedRSVPs.push(rsvpData);
+            localStorage.setItem('weddingRSVPs', JSON.stringify(savedRSVPs));
+            
+            // Reset form
             rsvpForm.reset();
+            
+            // Tampilkan konfirmasi
+            alert('Terima kasih! RSVP Anda telah dikirim.');
         });
     }
-
-    // Wishes Form Handling
+    
+    // Fungsi untuk form Wishes
     const wishesForm = document.getElementById('wishesForm');
-    if (wishesForm) {
-        const wishesContainer = document.querySelector('.wishes-container');
+    const wishesContainer = document.querySelector('.wishes-container');
+    
+    if (wishesForm && wishesContainer) {
+        // Fungsi untuk menampilkan ucapan
+        function displayWishes() {
+            // Ambil data dari localStorage
+            let savedWishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
+            
+            // Hapus konten saat ini (kecuali contoh jika diperlukan)
+            // Uncomment baris berikut jika ingin menghapus contoh ucapan:
+            // wishesContainer.innerHTML = '';
+            
+            // Tambahkan ucapan baru di atas
+            for (let i = savedWishes.length - 1; i >= 0; i--) {
+                const wish = savedWishes[i];
+                
+                // Buat elemen wish card
+                const wishCard = document.createElement('div');
+                wishCard.className = 'wish-card';
+                
+                // Format waktu
+                const timestamp = new Date(wish.timestamp);
+                const timeAgo = getTimeAgo(timestamp);
+                
+                wishCard.innerHTML = `
+                    <div class="wish-header">
+                        <h3 class="wish-name">${wish.name}</h3>
+                        <span class="wish-time">${timeAgo}</span>
+                    </div>
+                    <p class="wish-message">${wish.message}</p>
+                `;
+                
+                // Tambahkan ke container
+                wishesContainer.prepend(wishCard);
+            }
+        }
         
+        // Fungsi untuk mendapatkan waktu relatif
+        function getTimeAgo(timestamp) {
+            const now = new Date();
+            const secondsAgo = Math.floor((now - timestamp) / 1000);
+            
+            if (secondsAgo < 60) {
+                return 'Baru saja';
+            } else if (secondsAgo < 3600) {
+                const minutes = Math.floor(secondsAgo / 60);
+                return `${minutes} menit yang lalu`;
+            } else if (secondsAgo < 86400) {
+                const hours = Math.floor(secondsAgo / 3600);
+                return `${hours} jam yang lalu`;
+            } else {
+                const days = Math.floor(secondsAgo / 86400);
+                return `${days} hari yang lalu`;
+            }
+        }
+        
+        // Tambahkan event listener untuk form
         wishesForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
+            // Ambil data dari form
             const name = document.getElementById('wishName').value;
             const message = document.getElementById('wishMessage').value;
             
-            if (name && message && wishesContainer) {
-                // Create new wish card
-                const wishCard = document.createElement('div');
-                wishCard.className = 'wish-card';
-                wishCard.innerHTML = `
-                    <div class="wish-header">
-                        <h3 class="wish-name">${name}</h3>
-                        <span class="wish-time">Baru saja</span>
-                    </div>
-                    <p class="wish-message">${message}</p>
-                `;
-                
-                // Add new wish to container
-                wishesContainer.insertBefore(wishCard, wishesContainer.firstChild);
-                
-                // Clear form
-                wishesForm.reset();
-            }
+            // Simpan data
+            const wishData = {
+                name: name,
+                message: message,
+                timestamp: new Date()
+            };
+            
+            // Simpan di localStorage
+            let savedWishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
+            savedWishes.push(wishData);
+            localStorage.setItem('weddingWishes', JSON.stringify(savedWishes));
+            
+            // Reset form
+            wishesForm.reset();
+            
+            // Perbarui tampilan
+            displayWishes();
+            
+            // Tampilkan konfirmasi
+            alert('Terima kasih! Ucapan Anda telah ditambahkan.');
         });
+        
+        // Tampilkan ucapan yang sudah ada saat halaman dimuat
+        displayWishes();
     }
 });
-
