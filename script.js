@@ -210,3 +210,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+// Fungsi untuk mengecek apakah elemen visible di viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75
+    );
+}
+
+// Fungsi untuk menambahkan class 'appear' pada elemen yang visible
+function handleScrollAnimation() {
+    const animatedElements = [
+        document.querySelector('#content2 .wedding-content'),
+        document.querySelector('#content3 .prayer-content'),
+        document.querySelector('#content4 .couple-info'),
+        document.querySelector('#content5 .invitation-content'),
+        document.querySelector('#content6 .gallery-content'),
+        document.querySelector('#content7 .story-content'),
+        document.querySelector('#content8 .rsvp-wishes-container'),
+        document.querySelector('#content9 .closing-content')
+    ];
+    
+    animatedElements.forEach(element => {
+        if (element && !element.classList.contains('appear') && isElementInViewport(element)) {
+            element.classList.add('appear');
+        }
+    });
+}
+
+// Event listener untuk scroll
+window.addEventListener('scroll', handleScrollAnimation);
+
+// Jalankan sekali saat halaman dimuat
+window.addEventListener('load', handleScrollAnimation);
