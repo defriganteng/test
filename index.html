@@ -261,8 +261,8 @@
     </div>
 </section>
 
-
-       <section id="content8" class="content">
+<!-- RSVP & Wishes Section -->
+        <section id="content8" class="content">
             <div class="rsvp-wishes-container">
                 <!-- RSVP Form -->
                 <div class="rsvp-section">
@@ -270,21 +270,16 @@
                     <form id="rsvpForm" class="rsvp-form">
                         <div class="form-group">
                             <label for="name">Nama</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
                         </div>
                         
                         <div class="form-group">
-                            <label>Kehadiran</label>
-                            <div class="attendance-options">
-                                <label class="radio-label">
-                                    <input type="radio" name="attendance" value="hadir" required>
-                                    <span>Ya, Saya akan hadir</span>
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" name="attendance" value="tidak_hadir">
-                                    <span>Maaf, Saya tidak bisa hadir</span>
-                                </label>
-                            </div>
+                            <label for="attendance">Kehadiran</label>
+                            <select id="attendance" name="attendance" required>
+                                <option value="" disabled selected>Pilih Kehadiran</option>
+                                <option value="hadir">Ya, Saya akan hadir</option>
+                                <option value="tidak_hadir">Maaf, Saya tidak bisa hadir</option>
+                            </select>
                         </div>
 
                         <button type="submit" class="submit-btn">Kirim RSVP</button>
@@ -297,22 +292,22 @@
                     <form id="wishesForm" class="wishes-form">
                         <div class="form-group">
                             <label for="wishName">Nama</label>
-                            <input type="text" id="wishName" name="wishName" required>
+                            <input type="text" id="wishName" name="wishName" required placeholder="Masukkan nama Anda">
                         </div>
                         
                         <div class="form-group">
                             <label for="wishMessage">Ucapan & Doa</label>
-                            <textarea id="wishMessage" name="wishMessage" rows="4" required></textarea>
+                            <textarea id="wishMessage" name="wishMessage" rows="4" required placeholder="Tulis ucapan dan doa di sini"></textarea>
                         </div>
 
                         <button type="submit" class="submit-btn">Kirim Ucapan</button>
                     </form>
 
-                    <!-- Wishes Display -->
                     <div class="wishes-container"></div>
                 </div>
             </div>
         </section>
+       
                 
 
 
