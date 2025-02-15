@@ -1,10 +1,11 @@
 /*animasi panah*/
+
 .scroll-arrow {
     position: absolute;
-    bottom: 30px;
+    bottom: 80px; /* Posisi lebih tinggi dari sebelumnya */
     left: 50%;
-    transform: translateX(-50%) rotate(180deg);
-    font-size: 2rem;
+    transform: translateX(-50%);
+    font-size: 3rem; /* Ukuran yang lebih besar */
     color: white;
     animation: bounceUpDown 2s infinite;
     cursor: pointer;
@@ -12,18 +13,17 @@
 
 @keyframes bounceUpDown {
     0%, 100% {
-        transform: translateX(-50%) translateY(0) rotate(180deg);
+        transform: translateX(-50%) translateY(0);
     }
     50% {
-        transform: translateX(-50%) translateY(-15px) rotate(180deg);
+        transform: translateX(-50%) translateY(-15px);
     }
 }
-
 /* For mobile responsiveness */
 @media (max-width: 768px) {
     .scroll-arrow {
-        font-size: 1.5rem;
-        bottom: 20px;
+        font-size: 2.5rem; /* Ukuran yang lebih besar untuk mobile */
+        bottom: 60px; /* Posisi disesuaikan untuk mobile */
     }
 }
 
