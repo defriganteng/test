@@ -23,7 +23,7 @@
 @media (max-width: 768px) {
     .scroll-arrow {
         font-size: 2.5rem; /* Ukuran yang lebih besar untuk mobile */
-        bottom: 60px; /* Posisi disesuaikan untuk mobile */
+        bottom: 100px; /* Posisi disesuaikan untuk mobile */
     }
 }
 
