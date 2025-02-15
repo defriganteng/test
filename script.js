@@ -1,8 +1,9 @@
 //untuk koneksi buruk
-// Tampilkan halaman hanya setelah semua elemen selesai dimuat
-        window.onload = function() {
-            document.body.style.display = "block";
-        };
+document.documentElement.style.visibility = "hidden"; // Sembunyikan halaman
+
+window.onload = function () {
+    document.documentElement.style.visibility = "visible"; // Tampilkan halaman setelah semua elemen selesai dimuat
+};
 
 
 
