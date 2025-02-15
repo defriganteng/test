@@ -120,11 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const wishesForm = document.getElementById('wishesForm');
     const wishesContainer = document.querySelector('.wishes-container');
 
+    // Form RSVP
     if (rsvpForm) {
         rsvpForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
-            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const attendance = document.getElementById('attendance').value;
             
             console.log('RSVP Dikirim:', name, attendance);
             
@@ -133,27 +134,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Form Ucapan & Doa
     if (wishesForm && wishesContainer) {
-        function displayWishes() {
-            let savedWishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
-            wishesContainer.innerHTML = '';
-
-            savedWishes.forEach(wish => {
-                const wishCard = document.createElement('div');
-                wishCard.className = 'wish-card';
-
-                wishCard.innerHTML = `
-                    <div class="wish-header">
-                        <h3 class="wish-name">${wish.name}</h3>
-                        <span class="wish-time">${new Date(wish.timestamp).toLocaleString()}</span>
-                    </div>
-                    <p class="wish-message">${wish.message}</p>
-                `;
-
-                wishesContainer.prepend(wishCard);
-            });
-        }
-
         wishesForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('wishName').value;
@@ -161,17 +143,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             console.log('Ucapan Dikirim:', name, message);
 
-            const wishData = { name, message, timestamp: new Date() };
-            let savedWishes = JSON.parse(localStorage.getItem('weddingWishes') || '[]');
-            savedWishes.push(wishData);
-            localStorage.setItem('weddingWishes', JSON.stringify(savedWishes));
-
-            displayWishes();
+            const wishCard = document.createElement('div');
+            wishCard.className = 'wish-card';
+            wishCard.innerHTML = `
+                <div class="wish-header">
+                    <h3 class="wish-name">${name}</h3>
+                    <span class="wish-time">Baru saja</span>
+                </div>
+                <p class="wish-message">${message}</p>
+            `;
+            
+            wishesContainer.prepend(wishCard);
             wishesForm.reset();
             alert('Terima kasih! Ucapan Anda telah dikirim.');
         });
-
-        displayWishes();
     }
 });
-            
