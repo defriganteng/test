@@ -260,6 +260,88 @@
         </div>
     </div>
 </section>
+
+
+<section id="content7" class="content">
+    <div class="rsvp-wishes-container">
+        <!-- RSVP Form -->
+        <div class="rsvp-section">
+            <h2 class="section-title">RSVP</h2>
+            <form id="rsvpForm" class="rsvp-form">
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Kehadiran</label>
+                    <div class="attendance-options">
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="hadir" required>
+                            <span>Ya, Saya akan hadir</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="tidak_hadir">
+                            <span>Maaf, Saya tidak bisa hadir</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="guestCountGroup">
+                    <label for="guestCount">Jumlah Tamu</label>
+                    <select id="guestCount" name="guestCount">
+                        <option value="1">1 orang</option>
+                        <option value="2">2 orang</option>
+                        <option value="3">3 orang</option>
+                        <option value="4">4 orang</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Kirim RSVP</button>
+            </form>
+        </div>
+
+        <!-- Wishes Section -->
+        <div class="wishes-section">
+            <h2 class="section-title">Ucapan & Doa</h2>
+            
+            <!-- Wishes Form -->
+            <form id="wishesForm" class="wishes-form">
+                <div class="form-group">
+                    <label for="wishName">Nama</label>
+                    <input type="text" id="wishName" name="wishName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="wishMessage">Ucapan & Doa</label>
+                    <textarea id="wishMessage" name="wishMessage" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Kirim Ucapan</button>
+            </form>
+
+            <!-- Wishes Display -->
+            <div class="wishes-container">
+                <!-- Sample Wishes -->
+                <div class="wish-card">
+                    <div class="wish-header">
+                        <h3 class="wish-name">Ahmad</h3>
+                        <span class="wish-time">Baru saja</span>
+                    </div>
+                    <p class="wish-message">Selamat menempuh hidup baru! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin.</p>
+                </div>
+
+                <div class="wish-card">
+                    <div class="wish-header">
+                        <h3 class="wish-name">Sarah</h3>
+                        <span class="wish-time">5 menit yang lalu</span>
+                    </div>
+                    <p class="wish-message">Barakallah untuk kedua mempelai. Semoga Allah memberkahi pernikahan kalian dan menjadikan keluarga kalian penuh keberkahan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         
     </div>
     <script src="script.js"></script>
