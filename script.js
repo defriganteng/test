@@ -184,3 +184,29 @@ document.addEventListener('DOMContentLoaded', function() {
         guestNameElement.textContent = decodeURIComponent(guestName); // Tampilkan nama
     }
 });
+
+
+//animasi
+document.addEventListener('DOMContentLoaded', function() {
+    // Elements to animate
+    const animatedElements = [
+        '.animate-title',
+        '.animate-names',
+        '.animate-to-text',
+        '.animate-guest-name',
+        '.animate-button'
+    ];
+    
+    // Delay between each animation (in milliseconds)
+    const delay = 300;
+    
+    // Apply animations with delay
+    animatedElements.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            setTimeout(() => {
+                element.classList.add('appear');
+            }, index * delay);
+        }
+    });
+});
