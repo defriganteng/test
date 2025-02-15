@@ -1,9 +1,3 @@
-/* Sembunyikan halaman saat loading */
-body {
-    display: none;
-}
-
-
 * {
     margin: 0;
     padding: 0;
