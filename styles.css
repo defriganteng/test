@@ -2,7 +2,7 @@
 
 .scroll-arrow {
     position: absolute;
-    bottom: 80px; /* Posisi lebih tinggi dari sebelumnya */
+    bottom: 140px; /* Posisi lebih tinggi dari sebelumnya */
     left: 50%;
     transform: translateX(-50%);
     font-size: 3rem; /* Ukuran yang lebih besar */
