@@ -113,60 +113,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Add this to your script.js file
+
+// Add this to your script.js file
 document.addEventListener('DOMContentLoaded', function() {
     // RSVP Form Handling
     const rsvpForm = document.getElementById('rsvpForm');
-    const guestCountGroup = document.getElementById('guestCountGroup');
-
-    // Show/hide guest count based on attendance
-    document.querySelectorAll('input[name="attendance"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-            guestCountGroup.style.display = 
-                this.value === 'hadir' ? 'block' : 'none';
+    if (rsvpForm) {
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(rsvpForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            console.log('RSVP Data:', data);
+            
+            // Show success message
+            alert('Terima kasih telah mengkonfirmasi kehadiran Anda!');
+            rsvpForm.reset();
         });
-    });
-
-    rsvpForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(rsvpForm);
-        const data = Object.fromEntries(formData);
-        
-        // Here you would typically send the data to your server
-        console.log('RSVP Data:', data);
-        
-        // Show success message
-        alert('Terima kasih telah mengkonfirmasi kehadiran Anda!');
-        rsvpForm.reset();
-    });
+    }
 
     // Wishes Form Handling
     const wishesForm = document.getElementById('wishesForm');
-    const wishesContainer = document.querySelector('.wishes-container');
-
-    wishesForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+    if (wishesForm) {
+        const wishesContainer = document.querySelector('.wishes-container');
         
-        // Get form data
-        const name = document.getElementById('wishName').value;
-        const message = document.getElementById('wishMessage').value;
-        
-        // Create new wish card
-        const wishCard = document.createElement('div');
-        wishCard.className = 'wish-card';
-        wishCard.innerHTML = `
-            <div class="wish-header">
-                <h3 class="wish-name">${name}</h3>
-                <span class="wish-time">Baru saja</span>
-            </div>
-            <p class="wish-message">${message}</p>
-        `;
-        
-        // Add new wish to container
-        wishesContainer.insertBefore(wishCard, wishesContainer.firstChild);
-        
-        // Clear form
-        wishesForm.reset();
-    });
+        wishesForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('wishName').value;
+            const message = document.getElementById('wishMessage').value;
+            
+            if (name && message && wishesContainer) {
+                // Create new wish card
+                const wishCard = document.createElement('div');
+                wishCard.className = 'wish-card';
+                wishCard.innerHTML = `
+                    <div class="wish-header">
+                        <h3 class="wish-name">${name}</h3>
+                        <span class="wish-time">Baru saja</span>
+                    </div>
+                    <p class="wish-message">${message}</p>
+                `;
+                
+                // Add new wish to container
+                wishesContainer.insertBefore(wishCard, wishesContainer.firstChild);
+                
+                // Clear form
+                wishesForm.reset();
+            }
+        });
+    }
 });
+
