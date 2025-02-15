@@ -430,9 +430,10 @@ html, body {
 /* Section 6 - Gallery */
 #content6 {
     position: relative;
-    background-color: #1a1a1a;
-    min-height: 100vh;
-    overflow-y: auto;
+    background-image: url('backgroundk3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-content {
