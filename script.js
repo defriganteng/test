@@ -212,4 +212,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//animasi waktu scroll
+//animasi waktu scroll konten 2
+// Tambahkan kode ini di script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const content = entry.target.querySelector('.wedding-content');
+                if (content) {
+                    content.classList.add('appear');
+                }
+            }
+        });
+    }, {
+        threshold: 0.2 // Menentukan seberapa banyak elemen harus terlihat sebelum animasi dimulai
+    });
+
+    // Observasi section content2
+    const content2 = document.getElementById('content2');
+    if (content2) {
+        observer.observe(content2);
+    }
+});
