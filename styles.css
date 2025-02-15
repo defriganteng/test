@@ -1168,3 +1168,60 @@ html, body {
         transform: rotate(45deg) scale(0.8);
     }
 }
+
+
+
+
+/*animasi*/
+/* Add these animation definitions to your styles.css file */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Add these classes to your existing CSS */
+.animate-title,
+.animate-names,
+.animate-to-text,
+.animate-guest-name,
+.animate-button {
+    opacity: 0;
+}
+
+.animate-title.appear {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-names.appear {
+    animation: fadeInScale 0.8s ease forwards;
+}
+
+.animate-to-text.appear {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-guest-name.appear {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-button.appear {
+    animation: fadeInScale 0.8s ease forwards;
+}
