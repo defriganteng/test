@@ -2,13 +2,13 @@
 
 .scroll-arrow {
     position: absolute;
-    bottom: 140px; /* Posisi lebih tinggi dari sebelumnya */
+    bottom: 200px; /* Posisi lebih tinggi dari sebelumnya */
     left: 50%;
     transform: translateX(-50%);
-    font-size: 3rem; /* Ukuran yang lebih besar */
+    font-size: 5rem; /* Ukuran yang lebih besar */
     color: white;
     animation: bounceUpDown 2s infinite;
-    cursor: pointer;
+    
 }
 
 @keyframes bounceUpDown {
@@ -22,8 +22,8 @@
 /* For mobile responsiveness */
 @media (max-width: 768px) {
     .scroll-arrow {
-        font-size: 2.5rem; /* Ukuran yang lebih besar untuk mobile */
-        bottom: 100px; /* Posisi disesuaikan untuk mobile */
+        font-size: 4.5rem; /* Ukuran yang lebih besar untuk mobile */
+        bottom: 140px; /* Posisi disesuaikan untuk mobile */
     }
 }
 
