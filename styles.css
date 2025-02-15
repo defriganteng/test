@@ -690,9 +690,20 @@ html, body {
 /* Section 8 - RSVP and Wishes */
 #content8 {
     position: relative;
-    background-color: #f9f9f9;
-    min-height: 100vh;
-    padding: 60px 0;
+    background-image: url('backgroundk3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content8::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .rsvp-wishes-container {
