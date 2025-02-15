@@ -691,7 +691,7 @@ html, body {
 /* Styling Section 8 - RSVP & Wishes */
 #content8 {
     position: relative;
-    background: #A0A0A0; /* Warna krem dari palet */
+    background: #FBF5DD; /* Warna krem */
     padding: 50px 20px;
 }
 
@@ -707,15 +707,14 @@ html, body {
     text-align: center;
     font-size: 28px;
     font-weight: bold;
-    color: white; /* Deep teal */
+    color: #16404D; /* Deep teal */
     margin-bottom: 20px;
     font-family: 'Playfair Display', serif;
 }
 
 /* Card Style untuk Form */
 .rsvp-form, .wishes-form {
-    background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
+    background: white;
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -739,44 +738,26 @@ html, body {
     margin-bottom: 8px;
 }
 
+/* Input & Dropdown Styling */
 .form-group input,
+.form-group select,
 .form-group textarea {
     width: 100%;
     padding: 12px;
     border: 2px solid #A6CDC6; /* Soft teal */
     border-radius: 8px;
     font-size: 16px;
+    background-color: white;
+    cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
+.form-group select:focus,
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #DDA853; /* Gold */
     outline: none;
     box-shadow: 0 0 8px rgba(221, 168, 83, 0.5);
-}
-
-/* Radio Button Styling */
-.attendance-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.radio-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    color: #16404D;
-}
-
-.radio-label input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #DDA853; /* Gold */
 }
 
 /* Tombol Submit */
@@ -837,6 +818,8 @@ html, body {
         padding: 0 15px;
     }
 }
+
+
     
 
 
