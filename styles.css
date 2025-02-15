@@ -1208,21 +1208,21 @@ html, body {
 }
 
 .animate-title.appear {
-    animation: fadeInUp 0.8s ease forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .animate-names.appear {
-    animation: fadeInScale 0.8s ease forwards;
+    animation: fadeInScale 1s ease forwards;
 }
 
 .animate-to-text.appear {
-    animation: fadeInUp 0.6s ease forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .animate-guest-name.appear {
-    animation: fadeInUp 0.6s ease forwards;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .animate-button.appear {
-    animation: fadeInScale 0.8s ease forwards;
+    animation: fadeInScale 1s ease forwards;
 }
