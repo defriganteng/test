@@ -434,3 +434,138 @@ html, body {
         font-size: 1rem;
     }
 }
+
+/* Styles for Content 5 - Invitation Details */
+#content5 {
+    position: relative;
+    background-image: url('backgroundk5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.invitation-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: white;
+}
+
+.invitation-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.greeting {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.invite-message {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.wedding-events {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.event-card {
+    flex: 1;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.event-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.detail-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.closing-text {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.closing-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.wassalam {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wedding-events {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-card {
+        width: 100%;
+    }
+
+    .greeting {
+        font-size: 1.6rem;
+    }
+
+    .event-title {
+        font-size: 1.5rem;
+    }
+
+    .invite-message,
+    .detail-item p,
+    .closing-text p {
+        font-size: 1rem;
+    }
+
+    .wassalam {
+        font-size: 1.3rem;
+    }
+}
