@@ -159,3 +159,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+// Fungsi untuk mengambil parameter dari URL
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Menampilkan nama tamu dari URL
+document.addEventListener('DOMContentLoaded', function() {
+    const guestNameElement = document.getElementById('guestName');
+    const guestName = getQueryParam('nama'); // Ambil parameter 'nama'
+
+    if (guestName) {
+        guestNameElement.textContent = decodeURIComponent(guestName); // Tampilkan nama
+    }
+});
