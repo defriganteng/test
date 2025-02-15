@@ -565,9 +565,20 @@ html, body {
 /* Section 7 - Story */
 #content7 {
     position: relative;
-    background-color: #fff;
-    min-height: 100vh;
-    padding: 60px 0;
+    background-image: url('backgroundk33.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content7::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
 }
 
 .story-content {
