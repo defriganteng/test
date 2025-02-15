@@ -160,6 +160,16 @@ html, body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+
+.open-invitation:active {
+    background-color: transparent;
+}
+
+
+
+
+
+
 @media (max-width: 768px) {
     .title {
         font-size: 2rem;
