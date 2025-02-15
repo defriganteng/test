@@ -710,7 +710,7 @@ html, body {
 .story-event {
     opacity: 0;
     transform: translateX(20px);
-    transition: all 0.5s ease;
+    transition: all 1s ease;
 }
 
 .story-event.visible {
