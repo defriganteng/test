@@ -1,3 +1,10 @@
+/*untuk koneksi buruk*/
+.content-container {
+    display: none;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
