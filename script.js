@@ -1,3 +1,14 @@
+//untuk koneksi buruk
+
+document.documentElement.style.display = "none"; // Sembunyikan halaman awalnya
+
+window.onload = function () {
+    document.documentElement.style.display = "block"; // Tampilkan halaman setelah semua elemen selesai dimuat
+};
+
+
+
+
 function enableScroll() {
     const container = document.querySelector('.content-container');
     container.style.overflowY = 'auto';
