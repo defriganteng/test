@@ -234,3 +234,27 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(content2);
     }
 });
+
+
+//animasi waktu scroll konten 3
+// Tambahkan kode ini di script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const content = entry.target.querySelector('.prayer-content');
+                if (content) {
+                    content.classList.add('appear');
+                }
+            }
+        });
+    }, {
+        threshold: 0.9 // Menentukan seberapa banyak elemen harus terlihat sebelum animasi dimulai
+    });
+
+    // Observasi section content2
+    const content3 = document.getElementById('content3');
+    if (content3) {
+        observer.observe(content3);
+    }
+});
