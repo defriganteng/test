@@ -89,3 +89,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+// Add this to your script.js file
+document.addEventListener('DOMContentLoaded', function() {
+    // Intersection Observer for story events
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observe all story events
+    document.querySelectorAll('.story-event').forEach((event) => {
+        observer.observe(event);
+    });
+});
