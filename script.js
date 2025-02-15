@@ -1,13 +1,3 @@
-//untuk koneksi buruk
-document.documentElement.style.visibility = "hidden"; // Sembunyikan halaman
-
-window.onload = function () {
-    document.documentElement.style.visibility = "visible"; // Tampilkan halaman setelah semua elemen selesai dimuat
-};
-
-
-
-
 
 function enableScroll() {
     const container = document.querySelector('.content-container');
