@@ -2,6 +2,13 @@ function enableScroll() {
     const container = document.querySelector('.content-container');
     container.style.overflowY = 'auto';
     document.getElementById('content2').scrollIntoView({ behavior: 'smooth' });
+
+ // Mulai memutar musik
+    const bgMusic = document.getElementById('bgMusic');
+    if (bgMusic) {
+        bgMusic.play().catch(error => console.log("Autoplay diblokir oleh browser:", error));
+    }
+    
 }
 
 // Background Slider
