@@ -57,25 +57,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxImg = document.getElementById("lightbox-img");
     const closeLightbox = document.getElementById("close-lightbox");
 
-    // Saat gambar diklik, tampilkan dalam lightbox
-    galleryItems.forEach(item => {
-        item.addEventListener("click", function () {
-            lightboxImg.src = this.src; // Ambil src dari gambar yang diklik
-            lightbox.classList.add("active"); // Tampilkan lightbox
+    if (galleryItems.length > 0) {
+        console.log("Lightbox initialized, found", galleryItems.length, "images.");
+
+        galleryItems.forEach(item => {
+            item.addEventListener("click", function () {
+                console.log("Gambar diklik:", this.src);
+                lightboxImg.src = this.src;
+                lightbox.classList.add("active");
+            });
         });
-    });
 
-    // Tutup lightbox saat tombol close diklik
-    closeLightbox.addEventListener("click", function () {
-        lightbox.classList.remove("active");
-    });
-
-    // Tutup lightbox saat area luar gambar diklik
-    lightbox.addEventListener("click", function (event) {
-        if (event.target === lightbox) {
+        closeLightbox.addEventListener("click", function () {
+            console.log("Menutup lightbox.");
             lightbox.classList.remove("active");
-        }
-    });
+        });
+
+        lightbox.addEventListener("click", function (event) {
+            if (event.target !== lightboxImg) {
+                console.log("Klik di luar gambar, menutup lightbox.");
+                lightbox.classList.remove("active");
+            }
+        });
+    } else {
+        console.warn("Tidak ada gambar yang ditemukan untuk lightbox.");
+    }
 });
 
 
