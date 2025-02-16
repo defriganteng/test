@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.5  // 50% elemen terlihat sebelum animasi berjalan
+        threshold: 0.9  // 50% elemen terlihat sebelum animasi berjalan
     });
 
     // Observasi section content3
