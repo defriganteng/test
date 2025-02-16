@@ -1310,3 +1310,30 @@ html, body {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/*animasi pada scroll konten 4*/
+/* Animasi scale-up dari tengah bawah */
+@keyframes scaleUpFromBottom {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: bottom center;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: bottom center;
+    }
+}
+
+/* Set awal elemen di content4 */
+#content4 .couple-info {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Efek animasi saat elemen muncul */
+#content4.appear .couple-info {
+    animation: scaleUpFromBottom 1s ease forwards;
+}
