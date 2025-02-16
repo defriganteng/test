@@ -237,3 +237,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //animasi waktu scroll konten 3
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+            }
+        });
+    }, {
+        threshold: 0.5  // 50% elemen terlihat sebelum animasi berjalan
+    });
+
+    // Observasi section content3
+    const content3 = document.getElementById('content3');
+    if (content3) {
+        observer.observe(content3);
+    }
+});
