@@ -1702,6 +1702,17 @@ html, body {
     transform: scale(1.1);
 }
 
+.floating-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.floating-button:active {
+    transform: scale(0.9);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
 /* Responsif untuk mobile */
 @media (max-width: 768px) {
     .floating-button {
