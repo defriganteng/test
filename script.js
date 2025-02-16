@@ -274,3 +274,34 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(content4);
     }
 });
+
+
+//hitung mundur konten 5
+// Function to calculate and update the countdown
+        function updateCountdown() {
+            const weddingDate = new Date('August 23, 2025 08:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById('countdown-days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').innerText = seconds.toString().padStart(2, '0');
+            
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector('.countdown-container').innerHTML = "<h3>Hari Bahagia Telah Tiba!</h3>";
+            }
+        }
+        
+        // Update the countdown every 1 second
+        updateCountdown();
+        const x = setInterval(updateCountdown, 1000);
