@@ -298,6 +298,76 @@ document.addEventListener('DOMContentLoaded', function() {
         const x = setInterval(updateCountdown, 1000);
 
 
+//animasi konten 5
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Get all animated elements in content 5
+const animatedElements = document.querySelectorAll(`
+    #content5 .invitation-text,
+    #content5 .event-card,
+    #content5 .countdown-container,
+    #content5 .closing-text
+`);
+
+// Apply initial styles and observe each element
+animatedElements.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = 'opacity 1s ease, transform 1s ease';
+    observer.observe(element);
+});
+const eventCards = document.querySelectorAll('.event-card');
+eventCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+    });
+});
+
+// Pulse animation for event icons
+const eventIcons = document.querySelectorAll('.event-icon');
+eventIcons.forEach(icon => {
+    icon.style.animation = 'pulse 2s infinite';
+});
+
+// Map link hover effect
+const mapLinks = document.querySelectorAll('.map-link');
+mapLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        link.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+        link.style.transform = 'translateY(-3px)';
+    });
+
+    link.addEventListener('mouseleave', () => {
+        link.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        link.style.transform = 'translateY(0)';
+    });
+});
+
+
+
+
+
+
+
 //animasi konten 6
 document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".video-gallery, .photo-gallery, .gallery-item");
