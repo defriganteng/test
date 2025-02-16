@@ -237,24 +237,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //animasi waktu scroll konten 3
-/* Animasi saat scroll konten 3 */
-@keyframes fadeInUpContent3 {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+// Animasi saat scroll konten 3
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Tambahkan class 'appear' untuk animasi
+                const content = entry.target.querySelector('.prayer-content');
+                if (content) {
+                    content.classList.add('appear');
+                }
+            }
+        });
+    }, {
+        threshold: 0.8 // Menentukan seberapa banyak elemen harus terlihat sebelum animasi dimulai
+    });
 
-#content3 .prayer-content {
-    opacity: 0;
-    animation: fadeInUpContent3 1s ease forwards;
-}
-
-#content3 .prayer-content.appear {
-    opacity: 1;
-    animation: fadeInUpContent3 1s ease forwards;
-}
+    // Observasi section content3
+    const content3 = document.getElementById('content3');
+    if (content3) {
+        observer.observe(content3);
+    }
+});
