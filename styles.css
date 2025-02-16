@@ -1345,9 +1345,9 @@ html, body {
 
 /* Efek muncul saat terlihat di layar */
 #content4.appear .person-card:first-child {
-    animation: slideInFromLeft 1s ease forwards;
+    animation: slideInFromLeft 3s ease forwards;
 }
 
 #content4.appear .person-card:last-child {
-    animation: slideInFromRight 1s ease forwards;
+    animation: slideInFromRight 3s ease forwards;
 }
