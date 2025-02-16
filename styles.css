@@ -381,7 +381,10 @@ html, body {
     opacity: 1;
 }
 
-/* Section 5 - Invitation Details */
+/* konten 5 */
+/* Tambahkan kode CSS berikut di bagian Section 5 - Invitation Details */
+
+/* Updated Section 5 - Invitation Details */
 #content5 {
     position: relative;
     background-image: url('backgroundk5.jpg');
@@ -397,7 +400,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .invitation-content {
@@ -412,41 +415,82 @@ html, body {
 .invitation-text {
     text-align: center;
     margin-bottom: 40px;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .greeting {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .invite-message {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wedding-events {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 40px;
     margin-bottom: 40px;
 }
 
 .event-card {
     flex: 1;
+    min-width: 300px;
     max-width: 400px;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.event-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.event-icon {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .event-title {
     font-size: 1.8rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .event-details {
@@ -461,8 +505,10 @@ html, body {
     gap: 15px;
 }
 
-.icon {
-    font-size: 1.5rem;
+.detail-item i {
+    font-size: 1.2rem;
+    color: #FFD700;
+    margin-top: 3px;
 }
 
 .detail-item p {
@@ -470,9 +516,82 @@ html, body {
     line-height: 1.6;
 }
 
+.event-footer {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.map-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.map-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.map-link i {
+    margin-right: 5px;
+}
+
+/* Countdown Styles */
+.countdown-container {
+    margin: 30px auto 50px;
+    text-align: center;
+    max-width: 600px;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.countdown-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 70px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .closing-text {
     text-align: center;
     margin-top: 40px;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.9s;
 }
 
 .closing-text p {
@@ -484,7 +603,67 @@ html, body {
 .wassalam {
     font-size: 1.5rem;
     margin-top: 30px;
+    font-style: italic;
 }
+
+/* Animation for fadeInUp */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wedding-events {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .event-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .greeting {
+        font-size: 1.8rem;
+    }
+    
+    .event-title {
+        font-size: 1.5rem;
+    }
+    
+    .invite-message,
+    .detail-item p,
+    .closing-text p {
+        font-size: 1rem;
+    }
+    
+    .wassalam {
+        font-size: 1.3rem;
+    }
+    
+    .countdown {
+        flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+    }
+    
+    .countdown-number {
+        font-size: 1.8rem;
+        min-width: 50px;
+    }
+}
+  
+    
+
 
 /* Section 6 - Gallery */
 #content6 {
