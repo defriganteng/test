@@ -51,43 +51,90 @@ window.addEventListener('load', initBackgroundSlider);
 // ... JavaScript sebelumnya tetap sama ...
 
 // kode lightbox
-document.addEventListener("DOMContentLoaded", function () {
-    const galleryItems = document.querySelectorAll(".gallery-item img");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeLightbox = document.getElementById("close-lightbox");
+// Get all gallery items and lightbox elements
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
 
-    if (!lightbox || !lightboxImg || !closeLightbox) {
-        console.error("Elemen lightbox tidak ditemukan.");
-        return;
+// Create lightbox image element
+const lightboxImg = document.createElement('img');
+lightbox.appendChild(lightboxImg);
+
+// Create close button
+const closeButton = document.createElement('span');
+closeButton.className = 'close-lightbox';
+closeButton.innerHTML = '&times;';
+lightbox.appendChild(closeButton);
+
+// Add lightbox to document
+document.body.appendChild(lightbox);
+
+// Function to open lightbox
+function openLightbox(imageSrc) {
+    lightboxImg.src = imageSrc;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+}
+
+// Function to close lightbox
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Add click event listeners to gallery items
+galleryItems.forEach(item => {
+    const img = item.querySelector('img');
+    item.addEventListener('click', () => {
+        openLightbox(img.src);
+    });
+});
+
+// Close lightbox when clicking close button
+closeButton.addEventListener('click', closeLightbox);
+
+// Close lightbox when clicking outside the image
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
     }
+});
 
-    console.log("Lightbox initialized, found", galleryItems.length, "images.");
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+    }
+});
 
-    galleryItems.forEach(item => {
-        item.addEventListener("click", function () {
-            console.log("Gambar diklik:", this.src);
-            lightboxImg.src = this.src;
-            lightbox.classList.add("active");
-        });
-    });
+// Add touch swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
 
-    closeLightbox.addEventListener("click", function () {
-        console.log("Menutup lightbox.");
-        lightbox.classList.remove("active");
-    });
+lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
 
-    lightbox.addEventListener("click", function (event) {
-        if (event.target !== lightboxImg) {
-            console.log("Klik di luar gambar, menutup lightbox.");
-            lightbox.classList.remove("active");
-        }
-    });
+lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (Math.abs(touchEndX - touchStartX) > 50) { // Minimum swipe distance
+        closeLightbox();
+    }
+});
+
+// Add loading state
+lightboxImg.addEventListener('load', () => {
+    lightboxImg.style.opacity = '1';
+});
+
+lightboxImg.addEventListener('error', () => {
+    console.error('Error loading image');
+    closeLightbox();
 });
 
 
 
-
+//animasi untuk timeline cerita
 // Add this to your script.js file
 document.addEventListener('DOMContentLoaded', function() {
     // Intersection Observer for story events
