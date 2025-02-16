@@ -237,3 +237,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //animasi waktu scroll konten 3
+// Add this to your existing JavaScript (assuming you already have scroll event handling)
+
+// Function to check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+    );
+}
+
+// Function to handle animations for content3
+function handleContent3Animations() {
+    const content3 = document.getElementById('content3');
+    const prayerContent = content3.querySelector('.prayer-content');
+    const prayerTitle = content3.querySelector('.prayer-title');
+    const quranVerse = content3.querySelector('.quran-verse');
+    const weddingPrayer = content3.querySelector('.wedding-prayer');
+    
+    if (isInViewport(content3)) {
+        prayerContent.classList.add('appear');
+        prayerTitle.classList.add('appear');
+        quranVerse.classList.add('appear');
+        weddingPrayer.classList.add('appear');
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', function() {
+    handleContent3Animations();
+    // Keep any existing scroll handlers you already have
+});
+
+// Also check on initial load
+document.addEventListener('DOMContentLoaded', function() {
+    handleContent3Animations();
+    // Keep any existing DOMContentLoaded handlers you already have
+});
