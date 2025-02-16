@@ -431,3 +431,33 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(element);
     });
 });
+
+
+//toggle
+document.addEventListener("DOMContentLoaded", function () {
+    const navToggle = document.getElementById("navToggle");
+    const toggleButton = document.querySelector(".toggle-button");
+    const navMenu = document.querySelector(".nav-menu");
+
+    // Tampilkan toggle saat berada di content2 ke atas
+    window.addEventListener("scroll", function () {
+        const content2 = document.getElementById("content2");
+        if (window.scrollY >= content2.offsetTop - 50) {
+            navToggle.classList.add("show");
+        } else {
+            navToggle.classList.remove("show");
+        }
+    });
+
+    // Klik tombol toggle untuk menampilkan/menyembunyikan menu
+    toggleButton.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+
+    // Sembunyikan menu saat salah satu item diklik
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+        });
+    });
+});
