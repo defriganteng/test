@@ -1673,3 +1673,30 @@ html, body {
 #content4.appear .person-card:last-child {
     animation: slideInFromRight 3s ease forwards;
 }
+
+/*tombol muted*/
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #16404D; /* Warna deep teal */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1000;
+    display: none; /* Tombol disembunyikan di awal */
+}
+
+.floating-button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
