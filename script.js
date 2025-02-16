@@ -52,7 +52,6 @@ window.addEventListener('load', initBackgroundSlider);
 
 // kode lightbox
 document.addEventListener("DOMContentLoaded", function () {
-   document.addEventListener("DOMContentLoaded", function () {
     const galleryItems = document.querySelectorAll(".gallery-item img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -78,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-
 
 
 
