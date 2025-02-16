@@ -57,33 +57,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxImg = document.getElementById("lightbox-img");
     const closeLightbox = document.getElementById("close-lightbox");
 
-    if (galleryItems.length > 0) {
-        console.log("Lightbox initialized, found", galleryItems.length, "images.");
-
-        galleryItems.forEach(item => {
-            item.addEventListener("click", function () {
-                console.log("Gambar diklik:", this.src);
-                lightboxImg.src = this.src;
-                lightbox.classList.add("active");
-            });
-        });
-
-        closeLightbox.addEventListener("click", function () {
-            console.log("Menutup lightbox.");
-            lightbox.classList.remove("active");
-        });
-
-        lightbox.addEventListener("click", function (event) {
-            if (event.target !== lightboxImg) {
-                console.log("Klik di luar gambar, menutup lightbox.");
-                lightbox.classList.remove("active");
-            }
-        });
-    } else {
-        console.warn("Tidak ada gambar yang ditemukan untuk lightbox.");
+    if (!lightbox || !lightboxImg || !closeLightbox) {
+        console.error("Elemen lightbox tidak ditemukan.");
+        return;
     }
-});
 
+    console.log("Lightbox initialized, found", galleryItems.length, "images.");
+
+    galleryItems.forEach(item => {
+        item.addEventListener("click", function () {
+            console.log("Gambar diklik:", this.src);
+            lightboxImg.src = this.src;
+            lightbox.classList.add("active");
+        });
+    });
+
+    closeLightbox.addEventListener("click", function () {
+        console.log("Menutup lightbox.");
+        lightbox.classList.remove("active");
+    });
+
+    lightbox.addEventListener("click", function (event) {
+        if (event.target !== lightboxImg) {
+            console.log("Klik di luar gambar, menutup lightbox.");
+            lightbox.classList.remove("active");
+        }
+    });
+});
 
 
 
