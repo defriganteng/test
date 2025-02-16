@@ -305,3 +305,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update the countdown every 1 second
         updateCountdown();
         const x = setInterval(updateCountdown, 1000);
+
+
+//animasi konten 6
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".video-gallery, .photo-gallery, .gallery-item");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
