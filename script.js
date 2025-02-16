@@ -432,19 +432,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleMusicBtn = document.getElementById("toggleMusic");
     const bgMusic = document.getElementById("bgMusic");
 
-    // Tampilkan tombol saat berada di content2 ke atas
+    // Observer untuk menampilkan tombol pada content2 ke atas
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && entry.target.id !== "content1") {
-                toggleMusicBtn.style.display = "flex";
+            if (entry.isIntersecting) {
+                if (entry.target.id === "content1") {
+                    toggleMusicBtn.style.display = "none"; // Sembunyikan tombol di content1
+                } else {
+                    toggleMusicBtn.style.display = "flex"; // Tampilkan tombol di content2 dan seterusnya
+                }
             }
         });
     }, { threshold: 0.5 });
 
     document.querySelectorAll(".content").forEach(section => {
-        if (section.id !== "content1") {
-            observer.observe(section);
-        }
+        observer.observe(section);
     });
 
     // Toggle musik saat tombol ditekan
