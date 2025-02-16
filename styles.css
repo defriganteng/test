@@ -1288,3 +1288,25 @@ html, body {
 
 
 /*animasi waktu scroll konten 3*/
+/* Animasi untuk konten 3 */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#content3 .prayer-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#content3.appear .prayer-content {
+    opacity: 1;
+    transform: translateY(0);
+}
