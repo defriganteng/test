@@ -50,51 +50,44 @@ window.addEventListener('load', initBackgroundSlider);
 
 // ... JavaScript sebelumnya tetap sama ...
 
-// Add this to your script.js file
-document.addEventListener('DOMContentLoaded', function() {
-    // Create lightbox container
-    const lightboxContainer = document.createElement('div');
-    lightboxContainer.className = 'lightbox';
-    document.body.appendChild(lightboxContainer);
+// kode lightbox
+document.addEventListener("DOMContentLoaded", function () {
+    const lightbox = document.createElement("div");
+    lightbox.classList.add("lightbox");
+    document.body.appendChild(lightbox);
 
-    // Create close button
-    const closeButton = document.createElement('span');
-    closeButton.className = 'close-lightbox';
-    closeButton.innerHTML = '×';
-    lightboxContainer.appendChild(closeButton);
+    const lightboxImg = document.createElement("img");
+    lightbox.appendChild(lightboxImg);
 
-    // Create lightbox image
-    const lightboxImg = document.createElement('img');
-    lightboxContainer.appendChild(lightboxImg);
+    const closeBtn = document.createElement("span");
+    closeBtn.classList.add("close-lightbox");
+    closeBtn.innerHTML = "&times;";
+    lightbox.appendChild(closeBtn);
 
-    // Add click event to gallery items
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const galleryItems = document.querySelectorAll(".gallery-item img");
+
     galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            lightboxImg.src = this.src;
-            lightboxContainer.classList.add('active');
+        item.addEventListener("click", function () {
+            lightbox.classList.add("active");
+            lightboxImg.src = this.src; // Ambil gambar yang diklik
         });
     });
 
-    // Close lightbox when clicking close button or outside the image
-    closeButton.addEventListener('click', closeLightbox);
-    lightboxContainer.addEventListener('click', function(e) {
-        if (e.target === lightboxContainer) {
-            closeLightbox();
-        }
+    closeBtn.addEventListener("click", function () {
+        lightbox.classList.remove("active");
     });
 
-    function closeLightbox() {
-        lightboxContainer.classList.remove('active');
-    }
-
-    // Close lightbox with escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && lightboxContainer.classList.contains('active')) {
-            closeLightbox();
+    lightbox.addEventListener("click", function (e) {
+        if (e.target !== lightboxImg) {
+            lightbox.classList.remove("active"); // Tutup jika klik di luar gambar
         }
     });
 });
+
+
+
+
+
 
 
 // Add this to your script.js file
