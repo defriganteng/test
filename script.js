@@ -427,3 +427,134 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//toggle
+import React, { useState, useEffect } from 'react';
+import { Music, MusicOff } from 'lucide-react';
+
+const NavigationToggle = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [currentSection, setCurrentSection] = useState(2);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleAudio = () => {
+    const audio = document.getElementById('bgMusic');
+    if (audio) {
+      audio.muted = !audio.muted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const scrollToSection = (sectionNumber) => {
+    const section = document.getElementById(`content${sectionNumber}`);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setCurrentSection(sectionNumber);
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = Array.from({ length: 8 }, (_, i) => 
+        document.getElementById(`content${i + 2}`)
+      );
+
+      const currentPos = window.scrollY + window.innerHeight / 2;
+
+      sections.forEach((section, index) => {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (currentPos >= sectionTop && currentPos <= sectionBottom) {
+            setCurrentSection(index + 2);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end">
+      {/* Audio Toggle */}
+      <button
+        onClick={toggleAudio}
+        className="mb-4 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white transition-all duration-300"
+      >
+        {isMuted ? <MusicOff size={24} /> : <Music size={24} />}
+      </button>
+
+      {/* Navigation Toggle Button */}
+      <button
+        onClick={toggleMenu}
+        className="mb-4 rounded-full bg-white/90 p-4 shadow-lg hover:bg-white transition-all duration-300"
+      >
+        <div className="space-y-1.5">
+          <div className="h-0.5 w-6 bg-black"></div>
+          <div className="h-0.5 w-6 bg-black"></div>
+          <div className="h-0.5 w-6 bg-black"></div>
+        </div>
+      </button>
+
+      {/* Navigation Menu */}
+      <div className={`transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+        <div className="bg-white/90 rounded-lg shadow-lg p-4 backdrop-blur-sm">
+          <nav className="space-y-2">
+            {[2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+              <button
+                key={num}
+                onClick={() => scrollToSection(num)}
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-all duration-200
+                  ${currentSection === num ? 'bg-black text-white' : 'hover:bg-gray-100'}`}
+              >
+                {(() => {
+                  switch(num) {
+                    case 2: return 'Cover';
+                    case 3: return 'Doa';
+                    case 4: return 'Mempelai';
+                    case 5: return 'Acara';
+                    case 6: return 'Galeri';
+                    case 7: return 'Cerita Kami';
+                    case 8: return 'RSVP & Ucapan';
+                    case 9: return 'Penutup';
+                    default: return `Section ${num}`;
+                  }
+                })()}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default NavigationToggle;
+
+// In your script.js
+document.addEventListener('DOMContentLoaded', () => {
+  const content2 = document.getElementById('content2');
+  const navigationRoot = document.createElement('div');
+  navigationRoot.id = 'navigation-toggle-root';
+  document.body.appendChild(navigationRoot);
+  
+  // Show navigation when content2 is visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Initialize your React component here
+        // You'll need to include React and ReactDOM scripts
+        ReactDOM.render(<NavigationToggle />, navigationRoot);
+      }
+    });
+  });
+  
+  observer.observe(content2);
+});
