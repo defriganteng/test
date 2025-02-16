@@ -1289,13 +1289,3 @@ html, body {
 
 /*animasi waktu scroll konten 3*/
 /* Animation for content3 elements */
-.quran-verse, .wedding-prayer {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.quran-verse.appear, .wedding-prayer.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
