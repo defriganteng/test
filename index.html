@@ -6,6 +6,7 @@
     <title>Wedding Invitation</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="background">
@@ -89,66 +90,108 @@
     </div>
 </section>
 
-<!-- Section for Invitation Details -->
+<!-- konten 5 -->
 <section id="content5" class="content">
-    <div class="invitation-content">
-        <div class="invitation-text">
-            <h2 class="greeting">Assalamu'alaikum Wr. Wb.</h2>
-            <p class="invite-message">
-                Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami:
-            </p>
-        </div>
+        <div class="invitation-content">
+            <div class="invitation-text">
+                <h2 class="greeting">Assalamu'alaikum Wr. Wb.</h2>
+                <p class="invite-message">
+                    Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami:
+                </p>
+            </div>
 
-        <div class="wedding-events">
-            <!-- Akad Section -->
-            <div class="event-card">
-                <h3 class="event-title">Akad Nikah</h3>
-                <div class="event-details">
-                    <div class="detail-item">
-                        <span class="icon">📅</span>
-                        <p>Jumat, 23 Agustus 2024</p>
+            <div class="wedding-events">
+                <!-- Akad Section -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="event-title">Akad Nikah</h3>
                     </div>
-                    <div class="detail-item">
-                        <span class="icon">⏰</span>
-                        <p>08:00 WIB</p>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Jumat, 23 Agustus 2025</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <p>08:00 WIB</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Masjid An-Nur<br>
+                            Jl. Lorem Ipsum No. 123<br>
+                            Kota Jakarta</p>
+                        </div>
                     </div>
-                    <div class="detail-item">
-                        <span class="icon">📍</span>
-                        <p>Masjid An-Nur<br>
-                        Jl. Lorem Ipsum No. 123<br>
-                        Kota Jakarta</p>
+                    <div class="event-footer">
+                        <a href="https://maps.google.com/?q=Masjid+An-Nur+Jakarta" class="map-link" target="_blank">
+                            <i class="fas fa-map"></i> Lihat Lokasi
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resepsi Section -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3 class="event-title">Resepsi</h3>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Jumat, 23 Agustus 2025</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <p>11:00 - 14:00 WIB</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Gedung Serbaguna Adipura<br>
+                            Jl. Dolor Sit Amet No. 456<br>
+                            Kota Jakarta</p>
+                        </div>
+                    </div>
+                    <div class="event-footer">
+                        <a href="https://maps.google.com/?q=Gedung+Serbaguna+Adipura+Jakarta" class="map-link" target="_blank">
+                            <i class="fas fa-map"></i> Lihat Lokasi
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Resepsi Section -->
-            <div class="event-card">
-                <h3 class="event-title">Resepsi</h3>
-                <div class="event-details">
-                    <div class="detail-item">
-                        <span class="icon">📅</span>
-                        <p>Jumat, 23 Agustus 2024</p>
+            <div class="countdown-container">
+                <h3 class="countdown-title">Menghitung Hari Bahagia</h3>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-days">00</span>
+                        <span class="countdown-label">Hari</span>
                     </div>
-                    <div class="detail-item">
-                        <span class="icon">⏰</span>
-                        <p>11:00 - 14:00 WIB</p>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-hours">00</span>
+                        <span class="countdown-label">Jam</span>
                     </div>
-                    <div class="detail-item">
-                        <span class="icon">📍</span>
-                        <p>Gedung Serbaguna Adipura<br>
-                        Jl. Dolor Sit Amet No. 456<br>
-                        Kota Jakarta</p>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-seconds">00</span>
+                        <span class="countdown-label">Detik</span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="closing-text">
-            <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-            <p class="wassalam">Wassalamu'alaikum Wr. Wb.</p>
+            <div class="closing-text">
+                <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+                <p class="wassalam">Wassalamu'alaikum Wr. Wb.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 <section id="content6" class="content">
