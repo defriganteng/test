@@ -1317,7 +1317,7 @@ html, body {
 @keyframes slideInFromLeft {
     from {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-100px);
     }
     to {
         opacity: 1;
@@ -1329,7 +1329,7 @@ html, body {
 @keyframes slideInFromRight {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(100px);
     }
     to {
         opacity: 1;
