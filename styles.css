@@ -1313,3 +1313,41 @@ html, body {
 
 
 /*animasi pada scroll konten 4*/
+/* Animasi slide-in untuk pengantin pria (dari kiri) */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animasi slide-in untuk pengantin wanita (dari kanan) */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Set awal elemen tetap tersembunyi */
+#content4 .person-card {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Efek muncul saat terlihat di layar */
+#content4.appear .person-card:first-child {
+    animation: slideInFromLeft 1s ease forwards;
+}
+
+#content4.appear .person-card:last-child {
+    animation: slideInFromRight 1s ease forwards;
+}
