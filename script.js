@@ -409,12 +409,6 @@ mapLinks.forEach(link => {
     });
 });
 
-
-
-
-
-
-
 //animasi konten 6
 document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".video-gallery, .photo-gallery, .gallery-item");
@@ -429,5 +423,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     elements.forEach(element => {
         observer.observe(element);
+    });
+});
+
+
+//tombol mute
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleMusicBtn = document.getElementById("toggleMusic");
+    const bgMusic = document.getElementById("bgMusic");
+
+    // Tampilkan tombol saat berada di content2 ke atas
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.target.id !== "content1") {
+                toggleMusicBtn.style.display = "flex";
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll(".content").forEach(section => {
+        if (section.id !== "content1") {
+            observer.observe(section);
+        }
+    });
+
+    // Toggle musik saat tombol ditekan
+    toggleMusicBtn.addEventListener("click", function () {
+        if (bgMusic.paused) {
+            bgMusic.play();
+            toggleMusicBtn.innerHTML = '<i class="fas fa-music"></i>';
+        } else {
+            bgMusic.pause();
+            toggleMusicBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        }
     });
 });
