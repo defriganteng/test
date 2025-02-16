@@ -237,25 +237,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //animasi waktu scroll konten 3
-// Animasi saat scroll konten 3
-document.addEventListener('DOMContentLoaded', function() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Tambahkan class 'appear' untuk animasi
-                const content = entry.target.querySelector('.prayer-content');
-                if (content) {
-                    content.classList.add('appear');
-                }
-            }
-        });
-    }, {
-        threshold: 0.8 // Menentukan seberapa banyak elemen harus terlihat sebelum animasi dimulai
-    });
-
-    // Observasi section content3
-    const content3 = document.getElementById('content3');
-    if (content3) {
-        observer.observe(content3);
-    }
-});
