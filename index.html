@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="background-slide" style="background-image: url('background1.jpg')"></div>
+        <div class="background-slide" style="background-image: url('background2.jpg')"></div>
+        <div class="background-slide" style="background-image: url('background3.jpg')"></div>
+    </div>
+    <div class="content-container">
+        <section id="content1" class="content">
+    <div class="wedding-content">
+        <h1 class="title animate-title">The Wedding of</h1>
+        <h2 class="couple-names animate-names">Putra & Putri</h2>
+        <p class="to-text animate-to-text">Kepada Yth</p>
+        <p class="guest-name animate-guest-name" id="guestName">Nama Tamu</p>
+        <button class="open-invitation animate-button" onclick="enableScroll()">Buka Undangan</button>
+    </div>
+</section>
+        <section id="content2" class="content">
+            <div class="wedding-content">
+                <h1 class="title">The Wedding of</h1>
+                <h2 class="couple-names">Putra & Putri</h2>
+                <p class="wedding-date">23 . 08 . 2024</p>
+            </div>
+            <div class="scroll-arrow">^</div>
+        </section>
+        <section id="content3" class="content">
+            <div class="prayer-content">
+                <h2 class="prayer-title"></h2>
+                
+                <div class="quran-verse">
+                    <p class="arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+                    <p class="verse-name">Ar-Rum Ayat 21</p>
+                    <p class="translation">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."</p>
+                </div>
+
+                <div class="wedding-prayer">
+                    <p class="arabic">بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+                    <p class="translation">"Semoga Allah memberkahimu dalam segala hal dan mempersatukan kalian berdua dalam kebaikan."</p>
+                </div>
+            </div>
+        </section>
+        <section id="content4" class="content">
+    <div class="couple-info">
+        <!-- Groom's Information -->
+        <div class="person-card">
+            <div class="person-photo">
+                <img src="putra.jpg" alt="Putra">
+            </div>
+            <h3 class="person-name">Putra</h3>
+            <div class="person-details">
+                Putra Pertama dari:<br>
+                Bapak Lorem Ipsum<br>
+                &amp;<br>
+                Ibu Dolor Sit Amet
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/defriantonuriman_" target="_blank">
+                    @putra
+                </a>
+            </div>
+        </div>
+
+        <!-- Bride's Information -->
+        <div class="person-card">
+            <div class="person-photo">
+                <img src="putri.jpg" alt="Putri">
+            </div>
+            <h3 class="person-name">Putri</h3>
+            <div class="person-details">
+                Putri Kedua dari:<br>
+                Bapak Consectetur Adipiscing<br>
+                &amp;<br>
+                Ibu Elit Sed Do
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/defriantonuriman_" target="_blank">
+                    @putri
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- konten 5 -->
+<section id="content5" class="content">
+        <div class="invitation-content">
+            <div class="invitation-text">
+                <h2 class="greeting">Assalamu'alaikum Wr. Wb.</h2>
+                <p class="invite-message">
+                    Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami:
+                </p>
+            </div>
+
+            <div class="wedding-events">
+                <!-- Akad Section -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="event-title">Akad Nikah</h3>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Jumat, 23 Agustus 2025</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <p>08:00 WIB</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Masjid Mujahidin<br>
+                            Jl. Ahmad Yani No. 123<br>
+                            Kota Pontianak</p>
+                        </div>
+                    </div>
+                    <div class="event-footer">
+                        <a href="https://www.google.com/maps/place/Mujahidin+Grand+Mosque,+Jl.+Jenderal+Ahmad+Yani,+Akcaya,+South+Pontianak,+Pontianak,+West+Kalimantan/@-0.0415216,109.3362292,15z/data=!4m6!3m5!1s0x2e1d592b6e4d1a99:0xc68c0646502ffbe!8m2!3d-0.0415216!4d109.3362292!16s%2Fg%2F11hyd3qr__" class="map-link" target="_blank">
+                            <i class="fas fa-map"></i> Lihat Lokasi
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resepsi Section -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3 class="event-title">Resepsi</h3>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Jumat, 23 Agustus 2025</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <p>11:00 - 14:00 WIB</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Masjid Mujahidin<br>Jl. Ahmad Yani No. 123<br>Kota Pontianak</p>
+                        </div>
+                    </div>
+                    <div class="event-footer">
+                        <a href="https://maps.google.com/?q=Gedung+Serbaguna+Adipura+Jakarta" class="map-link" target="_blank">
+                            <i class="fas fa-map"></i> Lihat Lokasi
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="countdown-container">
+                <h3 class="countdown-title">Menghitung Hari Bahagia</h3>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-days">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-hours">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-seconds">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="closing-text">
+                <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+                <p class="wassalam">Wassalamu'alaikum Wr. Wb.</p>
+            </div>
+        </div>
+    </section>
+
+
+<section id="content6" class="content">
+    <div class="gallery-content">
+        <h2 class="gallery-title">Our Moments</h2>
+        
+        <!-- Video Gallery -->
+        <div class="video-gallery">
+            <h3 class="section-subtitle">Pre-Wedding Video</h3>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/G4mxTzmCMq4"
+                    title="Pre-Wedding Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+            <h3 class="section-subtitle">Our Journey</h3>
+            <div class="gallery-grid">
+                <!-- Grid Item 1 -->
+                <div class="gallery-item">
+                    <img src="gallery1.jpg" alt="Pre-wedding photo 1" loading="lazy">
+                </div>
+                <!-- Grid Item 2 -->
+                <div class="gallery-item">
+                    <img src="gallery2.jpg" alt="Pre-wedding photo 2" loading="lazy">
+                </div>
+                <!-- Grid Item 3 -->
+                <div class="gallery-item">
+                    <img src="gallery3.jpg" alt="Pre-wedding photo 3" loading="lazy">
+                </div>
+                <!-- Grid Item 4 -->
+                <div class="gallery-item">
+                    <img src="gallery4.jpg" alt="Pre-wedding photo 4" loading="lazy">
+                </div>
+                <!-- Grid Item 5 -->
+                <div class="gallery-item">
+                    <img src="gallery5.jpg" alt="Pre-wedding photo 5" loading="lazy">
+                </div>
+                <!-- Grid Item 6 -->
+                <div class="gallery-item">
+                    <img src="gallery6.jpg" alt="Pre-wedding photo 6" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <div class="lightbox" id="lightbox">
+    <span class="close-lightbox" id="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="Preview">
+</div>
+
+
+<section id="content7" class="content">
+    <div class="story-content">
+        <h2 class="story-title">Our Love Story</h2>
+        
+        <!-- Main Image -->
+        <div class="story-main-image">
+            <img src="fotoC.jpg" alt="Our Journey Together" loading="lazy">
+        </div>
+
+        <!-- Story Timeline -->
+        <div class="story-timeline">
+            <!-- First Meeting -->
+            <div class="story-event">
+                <div class="event-date">Januari 2020</div>
+                <h3 class="event-title">Awal Pertemuan</h3>
+                <p class="event-description">
+                    Kami pertama kali bertemu di sebuah acara kampus. Saat itu kami sama-sama menjadi panitia dalam acara organisasi mahasiswa. Pertemuan yang awalnya formal berubah menjadi awal dari sebuah cerita indah.
+                </p>
+            </div>
+
+            <!-- Getting Close -->
+            <div class="story-event">
+                <div class="event-date">Maret 2020</div>
+                <h3 class="event-title">Mulai Dekat</h3>
+                <p class="event-description">
+                    Intensitas pertemuan yang semakin sering membuat kami semakin dekat. Kesamaan hobi dan pemikiran membuat kami nyaman satu sama lain. Kami mulai berbagi cerita dan mimpi-mimpi kami.
+                </p>
+            </div>
+
+            <!-- Dating -->
+            <div class="story-event">
+                <div class="event-date">Juni 2020</div>
+                <h3 class="event-title">Memulai Hubungan</h3>
+                <p class="event-description">
+                    Setelah beberapa bulan saling mengenal, akhirnya kami memutuskan untuk menjalani hubungan yang lebih serius. Kencan pertama kami di sebuah kafe kecil menjadi momen yang tak terlupakan.
+                </p>
+            </div>
+
+            <!-- Engagement -->
+            <div class="story-event">
+                <div class="event-date">Desember 2023</div>
+                <h3 class="event-title">Lamaran</h3>
+                <p class="event-description">
+                    Setelah 3 tahun menjalin hubungan, kami memutuskan untuk melangkah ke jenjang yang lebih serius. Acara lamaran yang sederhana namun penuh makna menjadi awal dari komitmen kami untuk membangun keluarga bersama.
+                </p>
+            </div>
+
+            <!-- Wedding -->
+            <div class="story-event">
+                <div class="event-date">Agustus 2024</div>
+                <h3 class="event-title">Hari Pernikahan</h3>
+                <p class="event-description">
+                    Dan kini, kami siap memulai babak baru dalam hidup kami. Hari yang kami tunggu-tunggu akhirnya tiba. Kami berharap kebahagiaan ini bisa kami bagikan dengan orang-orang yang kami sayangi.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RSVP & Wishes Section -->
+        <section id="content8" class="content">
+            <div class="rsvp-wishes-container">
+                <!-- RSVP Form -->
+                <div class="rsvp-section">
+                    <h2 class="section-title">RSVP</h2>
+                    <form id="rsvpForm" class="rsvp-form">
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attendance">Kehadiran</label>
+                            <select id="attendance" name="attendance" required>
+                                <option value="" disabled selected>Pilih Kehadiran</option>
+                                <option value="hadir">Ya, Saya akan hadir</option>
+                                <option value="tidak_hadir">Maaf, Saya tidak bisa hadir</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Kirim RSVP</button>
+                    </form>
+                </div>
+
+                <!-- Wishes Section -->
+                <div class="wishes-section">
+                    <h2 class="section-title">Ucapan & Doa</h2>
+                    <form id="wishesForm" class="wishes-form">
+                        <div class="form-group">
+                            <label for="wishName">Nama</label>
+                            <input type="text" id="wishName" name="wishName" required placeholder="Masukkan nama Anda">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="wishMessage">Ucapan & Doa</label>
+                            <textarea id="wishMessage" name="wishMessage" rows="4" required placeholder="Tulis ucapan dan doa di sini"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Kirim Ucapan</button>
+                    </form>
+
+                    <div class="wishes-container"></div>
+                </div>
+            </div>
+        </section>
+       
+                
+
+
+
+<section id="content9" class="content">
+    <div class="closing-content">
+        <h2 class="closing-title">Terima Kasih</h2>
+        
+        <div class="closing-message">
+            <p class="message-text">
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i 
+                berkenan hadir untuk memberikan doa restu kepada kami.
+            </p>
+            
+            <p class="message-text">
+                Atas kehadiran dan doa restunya, kami ucapkan terima kasih.
+            </p>
+        </div>
+        
+        <div class="couple-signature">
+            <h3 class="signature-text">Putra & Putri</h3>
+        </div>
+        
+        <div class="family-regards">
+            <p class="regards-text">Beserta Keluarga Besar:</p>
+            <div class="family-names">
+                <div class="family-side">
+                    <h4>Keluarga Bapak Lorem Ipsum & Ibu Dolor Sit Amet</h4>
+                </div>
+                <div class="family-side">
+                    <h4>Keluarga Bapak Consectetur Adipiscing & Ibu Elit Sed Do</h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-ornament">
+            ❦
+        </div>
+        
+        <div class="credit">
+            <p></p>
+        </div>
+    </div>
+</section>
+
+    </div>
+    <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+</audio>
+    <script src="script.js"></script>
+</body>
+</html>
