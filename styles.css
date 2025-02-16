@@ -1673,3 +1673,84 @@ html, body {
 #content4.appear .person-card:last-child {
     animation: slideInFromRight 3s ease forwards;
 }
+
+
+
+/* NAVIGATION TOGGLE */
+.nav-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.nav-toggle.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Tombol Toggle */
+.toggle-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: background 0.3s ease, transform 0.3s;
+}
+
+.toggle-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Menu Navigasi */
+.nav-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    list-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    width: 150px;
+    text-align: right;
+}
+
+.nav-menu.active {
+    display: block;
+}
+
+.nav-menu li {
+    margin: 5px 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #DDA853; /* Gold */
+}
+
+/* Animasi ikon */
+@keyframes spinIcon {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
+.toggle-button:active i {
+    animation: spinIcon 0.5s linear;
+}
