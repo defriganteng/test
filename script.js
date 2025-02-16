@@ -52,34 +52,29 @@ window.addEventListener('load', initBackgroundSlider);
 
 // kode lightbox
 document.addEventListener("DOMContentLoaded", function () {
-    const lightbox = document.createElement("div");
-    lightbox.classList.add("lightbox");
-    document.body.appendChild(lightbox);
-
-    const lightboxImg = document.createElement("img");
-    lightbox.appendChild(lightboxImg);
-
-    const closeBtn = document.createElement("span");
-    closeBtn.classList.add("close-lightbox");
-    closeBtn.innerHTML = "&times;";
-    lightbox.appendChild(closeBtn);
-
+   document.addEventListener("DOMContentLoaded", function () {
     const galleryItems = document.querySelectorAll(".gallery-item img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeLightbox = document.getElementById("close-lightbox");
 
+    // Saat gambar diklik, tampilkan dalam lightbox
     galleryItems.forEach(item => {
         item.addEventListener("click", function () {
-            lightbox.classList.add("active");
-            lightboxImg.src = this.src; // Ambil gambar yang diklik
+            lightboxImg.src = this.src; // Ambil src dari gambar yang diklik
+            lightbox.classList.add("active"); // Tampilkan lightbox
         });
     });
 
-    closeBtn.addEventListener("click", function () {
+    // Tutup lightbox saat tombol close diklik
+    closeLightbox.addEventListener("click", function () {
         lightbox.classList.remove("active");
     });
 
-    lightbox.addEventListener("click", function (e) {
-        if (e.target !== lightboxImg) {
-            lightbox.classList.remove("active"); // Tutup jika klik di luar gambar
+    // Tutup lightbox saat area luar gambar diklik
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            lightbox.classList.remove("active");
         }
     });
 });
