@@ -439,22 +439,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.querySelector(".toggle-button");
     const navMenu = document.querySelector(".nav-menu");
 
-    // Tampilkan toggle saat berada di content2 ke atas
     window.addEventListener("scroll", function () {
         const content2 = document.getElementById("content2");
-        if (window.scrollY >= content2.offsetTop - 50) {
+        const content9 = document.getElementById("content9");
+
+        // Ambil posisi dari content2 dan content9
+        const content2Position = content2.getBoundingClientRect().top + window.scrollY;
+        const content9Position = content9.getBoundingClientRect().bottom + window.scrollY;
+
+        if (window.scrollY >= content2Position - 50 && window.scrollY <= content9Position) {
             navToggle.classList.add("show");
         } else {
             navToggle.classList.remove("show");
         }
     });
 
-    // Klik tombol toggle untuk menampilkan/menyembunyikan menu
+    // Toggle menu saat tombol diklik
     toggleButton.addEventListener("click", function () {
         navMenu.classList.toggle("active");
     });
 
-    // Sembunyikan menu saat salah satu item diklik
+    // Tutup menu setelah klik salah satu item
     document.querySelectorAll(".nav-menu a").forEach(link => {
         link.addEventListener("click", function () {
             navMenu.classList.remove("active");
