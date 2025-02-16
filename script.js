@@ -237,3 +237,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //animasi waktu scroll konten 3
+// Function to check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to handle scroll animations for content3
+function handleContent3Animations() {
+    const quranVerse = document.querySelector('#content3 .quran-verse');
+    const weddingPrayer = document.querySelector('#content3 .wedding-prayer');
+    
+    if (isInViewport(quranVerse) && !quranVerse.classList.contains('appear')) {
+        quranVerse.classList.add('appear');
+    }
+    
+    if (isInViewport(weddingPrayer) && !weddingPrayer.classList.contains('appear')) {
+        weddingPrayer.classList.add('appear');
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', function() {
+    handleContent3Animations();
+});
+
+// Also trigger on page load
+document.addEventListener('DOMContentLoaded', function() {
+    handleContent3Animations();
+});
