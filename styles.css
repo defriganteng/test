@@ -1695,21 +1695,18 @@ html, body {
     transition: transform 0.3s ease, background 0.3s ease;
     z-index: 1000;
     display: none; /* Tombol disembunyikan di awal */
+    outline: none; /* Hilangkan garis biru */
+    user-select: none; /* Mencegah teks dalam tombol bisa dipilih */
+    -webkit-tap-highlight-color: transparent; /* Hilangkan efek tap di mobile */
+}
+
+.floating-button:focus {
+    outline: none; /* Hilangkan efek fokus di semua browser */
 }
 
 .floating-button:hover {
     background: rgba(255, 255, 255, 1);
     transform: scale(1.1);
-}
-
-.floating-button:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.floating-button:active {
-    transform: scale(0.9);
-    background: rgba(255, 255, 255, 0.9);
 }
 
 
