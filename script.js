@@ -237,3 +237,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //animasi waktu scroll konten 3
+// Animasi untuk content3 saat terlihat di layar
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const content = entry.target.querySelector('.prayer-content');
+                if (content) {
+                    content.classList.add('appear');
+                }
+            }
+        });
+    }, {
+        threshold: 0.5 // Setengah bagian konten harus terlihat sebelum animasi dimulai
+    });
+
+    // Observasi section content3
+    const content3 = document.getElementById('content3');
+    if (content3) {
+        observer.observe(content3);
+    }
+});
