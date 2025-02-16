@@ -410,11 +410,6 @@ mapLinks.forEach(link => {
 });
 
 
-
-
-
-
-
 //animasi konten 6
 document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".video-gallery, .photo-gallery, .gallery-item");
@@ -432,37 +427,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-//toggle
-document.addEventListener("DOMContentLoaded", function () {
-    const navToggle = document.getElementById("navToggle");
-    const toggleButton = document.querySelector(".toggle-button");
-    const navMenu = document.querySelector(".nav-menu");
-
-    window.addEventListener("scroll", function () {
-        const content2 = document.getElementById("content2");
-        const content9 = document.getElementById("content9");
-
-        // Ambil posisi dari content2 dan content9
-        const content2Position = content2.getBoundingClientRect().top + window.scrollY;
-        const content9Position = content9.getBoundingClientRect().bottom + window.scrollY;
-
-        if (window.scrollY >= content2Position - 50 && window.scrollY <= content9Position) {
-            navToggle.classList.add("show");
-        } else {
-            navToggle.classList.remove("show");
-        }
-    });
-
-    // Toggle menu saat tombol diklik
-    toggleButton.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-    });
-
-    // Tutup menu setelah klik salah satu item
-    document.querySelectorAll(".nav-menu a").forEach(link => {
-        link.addEventListener("click", function () {
-            navMenu.classList.remove("active");
-        });
-    });
-});
