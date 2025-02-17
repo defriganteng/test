@@ -321,26 +321,6 @@ html, body {
 
 
 /* Section 4 - Couple Info */
-.intro-text {
-    text-align: center;
-    margin-bottom: 40px;;
-}
-
-.intro-text h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-.intro-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 #content4 {
     position: relative;
