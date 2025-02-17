@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //animasi waktu scroll konten 3
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.7  // 50% elemen terlihat sebelum animasi berjalan
+        threshold: 0.7  // Animasi berjalan saat 70% elemen terlihat
     });
 
     // Observasi section content3
