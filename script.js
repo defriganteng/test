@@ -432,14 +432,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleMusicBtn = document.getElementById("toggleMusic");
     const bgMusic = document.getElementById("bgMusic");
 
-    // Observer untuk menampilkan atau menyembunyikan tombol
+    // Observer untuk menampilkan atau menyembunyikan tombol dengan animasi scale
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 if (entry.target.id === "content1") {
-                    toggleMusicBtn.classList.remove("show");
-                    toggleMusicBtn.classList.add("hide");
+                    // Jika berada di content1, sembunyikan tombol dengan animasi
+                    if (toggleMusicBtn.classList.contains("show")) {
+                        toggleMusicBtn.classList.remove("show");
+                        toggleMusicBtn.classList.add("hide");
+                        setTimeout(() => {
+                            toggleMusicBtn.style.display = "none";
+                        }, 300); // Tunggu animasi selesai sebelum menghilangkan tombol
+                    }
                 } else {
+                    // Jika berada di content2 ke atas, tampilkan tombol dengan animasi
+                    toggleMusicBtn.style.display = "flex";
                     toggleMusicBtn.classList.remove("hide");
                     toggleMusicBtn.classList.add("show");
                 }
@@ -447,6 +455,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, { threshold: 0.5 });
 
+    // Terapkan observer ke setiap konten
     document.querySelectorAll(".content").forEach(section => {
         observer.observe(section);
     });
