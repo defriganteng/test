@@ -321,6 +321,26 @@ html, body {
 
 
 /* Section 4 - Couple Info */
+.intro-text {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 40px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+.intro-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
 #content4 {
     position: relative;
     background-image: url('backgroundk4.jpg');
