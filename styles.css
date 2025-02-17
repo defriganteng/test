@@ -466,6 +466,12 @@ html, body {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
+.assalam {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
 .invite-message {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -687,6 +693,10 @@ html, body {
     }
     
     .wassalam {
+        font-size: 1.3rem;
+    }
+
+    .assalam {
         font-size: 1.3rem;
     }
     
