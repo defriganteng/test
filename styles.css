@@ -392,19 +392,34 @@ html, body {
 
 .social-links {
     margin-top: 20px;
+    text-align: center;
 }
 
-.social-links a {
+.social-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
     color: white;
     text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    margin: 15px auto 0;
 }
 
-.social-links a:hover {
-    opacity: 1;
+.social-button i {
+    font-size: 1.2rem;
+}
+
+.social-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
 }
 
 /* konten 5 */
