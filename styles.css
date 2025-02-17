@@ -296,6 +296,29 @@ html, body {
 }
 
 /*animasi saat scroll konten 3*/
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Default: elemen tersembunyi */
+#content3 .prayer-content {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Saat muncul di layar, animasi berjalan */
+#content3.appear .prayer-content {
+    animation: scaleIn 0.8s ease forwards;
+}
+
 
 
 /* Section 4 - Couple Info */
