@@ -432,14 +432,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleMusicBtn = document.getElementById("toggleMusic");
     const bgMusic = document.getElementById("bgMusic");
 
-    // Observer untuk menampilkan tombol pada content2 ke atas
+    // Observer untuk menampilkan atau menyembunyikan tombol
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 if (entry.target.id === "content1") {
-                    toggleMusicBtn.style.display = "none"; // Sembunyikan tombol di content1
+                    toggleMusicBtn.classList.remove("show");
+                    toggleMusicBtn.classList.add("hide");
                 } else {
-                    toggleMusicBtn.style.display = "flex"; // Tampilkan tombol di content2 dan seterusnya
+                    toggleMusicBtn.classList.remove("hide");
+                    toggleMusicBtn.classList.add("show");
                 }
             }
         });
